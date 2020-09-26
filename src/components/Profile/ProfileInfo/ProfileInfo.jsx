@@ -1,16 +1,17 @@
 import React from "react";
+import Loader from "../../common/loader";
 import classes from "./ProfileInfo.module.css";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
-  return (
+  return !props.profile ? (
+    <Loader />
+  ) : (
     <section>
       <div>
-        <img src="https://i.pinimg.com/originals/b9/12/c1/b912c1aa2759236fad22995a0648391c.jpg" />
-      </div>
-
-      <div>
         <h1>Name</h1>
-        <img src="https://www.badeendwinkel.nl/3555-large_default/selfie-duck-lanco.jpg" />
+        <img src={props.profile.photos.large} />
+        <ProfileStatus />
       </div>
     </section>
   );
