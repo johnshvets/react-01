@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import userPic from "../../images/user.svg";
 import classes from "./Users.module.css";
 
@@ -28,12 +29,17 @@ const Users = (props) => {
       {props.users.map((user) => (
         <div key={user.id}>
           <div>
-            <img
-              src={user.photos.small != null ? user.photos.small : userPic}
-              width="64px"
-            />
+            <NavLink to={`/profile/${user.id}`}>
+              <img
+                src={user.photos.small != null ? user.photos.small : userPic}
+                width="64px"
+              />
+            </NavLink>
             {user.followed ? (
               <button
+                disabled={props.followingInProgress.some(
+                  (id) => id === user.id
+                )}
                 onClick={() => {
                   props.unfollow(user.id);
                 }}
@@ -42,6 +48,9 @@ const Users = (props) => {
               </button>
             ) : (
               <button
+                disabled={props.followingInProgress.some(
+                  (id) => id === user.id
+                )}
                 onClick={() => {
                   props.follow(user.id);
                 }}
