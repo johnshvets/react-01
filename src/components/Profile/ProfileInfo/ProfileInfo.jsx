@@ -11,7 +11,10 @@ const ProfileInfo = (props) => {
       <div>
         <h1>Name</h1>
         <img src={props.profile.photos.large} />
-        <ProfileStatus />
+        <ProfileStatus
+          status={props.status}
+          updateProfileStatus={props.updateProfileStatus}
+        />
       </div>
     </section>
   );
