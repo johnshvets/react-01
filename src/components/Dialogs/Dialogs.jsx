@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import DialogItem from "./Dialog/DialogItem";
 import Message from "./Message/Message";
+import MessageFormRedux from "./MessageForm/MessageForm";
 
 const Dialogs = (props) => {
   const dialogElement = props.dialogPage.dialogs.map((dialog) => (
@@ -12,13 +13,8 @@ const Dialogs = (props) => {
     <Message message={message.message} key={message.id} />
   ));
 
-  const onSendMessageClick = () => {
-    props.sendMessage();
-  };
-
-  const onNewMessageChange = (e) => {
-    const text = e.target.value;
-    props.updateNewMessageText(text);
+  const onSendMessage = (values) => {
+    props.sendMessage(values.newMessageText);
   };
 
   return (
@@ -27,14 +23,7 @@ const Dialogs = (props) => {
 
       <section className={classes.messages}>
         <div>{messageElement}</div>
-        <div>
-          <textarea
-            value={props.dialogPage.newMessageText}
-            onChange={onNewMessageChange}
-            placeholder="Enter your message"
-          />
-          <button onClick={onSendMessageClick}>Send</button>
-        </div>
+        <MessageFormRedux onSubmit={onSendMessage} />
       </section>
     </main>
   );
