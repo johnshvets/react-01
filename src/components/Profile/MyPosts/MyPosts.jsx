@@ -3,7 +3,7 @@ import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import PostFormRedux from "./PostForm/PostForm";
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
   const postElement = props.posts.map((post) => (
     <Post message={post.message} likesCount={post.likesCount} key={post.id} />
   ));
@@ -11,7 +11,7 @@ const MyPosts = (props) => {
   const addNewPost = (values) => {
     props.addPost(values.newPostText);
   };
-
+  console.log("dfjd");
   return (
     <section>
       <h2>My posts</h2>
@@ -19,6 +19,6 @@ const MyPosts = (props) => {
       {postElement}
     </section>
   );
-};
+});
 
 export default MyPosts;
