@@ -1,4 +1,4 @@
-const SEND_MESSAGE = "SEND-MESSAGE";
+const SEND_MESSAGE = "react-01/dialogs/SEND-MESSAGE";
 
 const initialState = {
   dialogs: [
