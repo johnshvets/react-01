@@ -3,9 +3,9 @@ import { Field, reduxForm } from "redux-form";
 import { requiredField } from "../../../utils/validators";
 import { Input } from "../../common/FormControls/FormControls";
 
-const LoginForm = (props) => {
+const LoginForm = ({ handleSubmit, error } = {}) => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <Field
           component={Input}
@@ -30,13 +30,12 @@ const LoginForm = (props) => {
           type={"checkbox"}
           name={"rememberMe"}
           id={"rememberMe"}
-          validate={[requiredField]}
         />
         <label class="checkbox-label" for="rememberMe">
           Remember me
         </label>
       </div>
-      {props.error && <p>{props.error}</p>}
+      {error && <p>{error}</p>}
       <button>Sign in</button>
     </form>
   );
