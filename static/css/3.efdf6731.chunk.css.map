@@ -1,0 +1,1 @@
+{"version":3,"sources":["Dialogs.module.css"],"names":[],"mappings":"AAAA,8BACE,YAAa,CACb,8BACF","file":"3.efdf6731.chunk.css","sourcesContent":[".dialogWrapper {\r\n  display: grid;\r\n  grid-template-columns: 2fr 10fr;\r\n}\r\n\r\n.dialogs {\r\n}\r\n\r\n.messages {\r\n}\r\n"]}
