@@ -1,3 +1,9 @@
+Do not leave your personal username and password. Specify, for example, on the Login page the test account data:
+
+Email: free@samuraijs.com
+
+Password: free
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
