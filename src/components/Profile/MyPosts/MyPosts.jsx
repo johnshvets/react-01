@@ -11,7 +11,7 @@ const MyPosts = React.memo((props) => {
   const addNewPost = (values) => {
     props.addPost(values.newPostText);
   };
-  console.log("dfjd");
+
   return (
     <section>
       <h2>My posts</h2>
