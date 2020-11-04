@@ -4,7 +4,7 @@ import { authAPI } from "../api/api";
 const SET_USER_DATA = "react-01/auth/SET_USER_DATA";
 
 const initialState = {
-  usersId: null,
+  userId: null,
   email: null,
   login: null,
   isAuth: false,
