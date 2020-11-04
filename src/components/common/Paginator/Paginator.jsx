@@ -33,9 +33,10 @@ const Paginator = ({
           (page) =>
             page >= leftPortionPageNumber && page <= rightPortionPageNumber
         )
-        .map((page) => {
+        .map((page, index) => {
           return (
             <a
+              key={index}
               className={`${classes.page} ${
                 currentPage === page && classes.selectedPage
               }`}
