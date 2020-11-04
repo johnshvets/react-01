@@ -4,7 +4,7 @@ import { follow, unfollow, getUsers } from "../../redux/users-reducer";
 import Users from "./Users";
 import Loader from "../common/loader";
 import { compose } from "redux";
-import { withAuthRedirect } from "../hoc/WithAuthRedirect";
+import { withAuthRedirect } from "../../hoc/WithAuthRedirect";
 import {
   getCurrentPage,
   getFollowingInProgress,
