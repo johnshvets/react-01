@@ -12,8 +12,7 @@ const Login = ({ login, isAuth } = {}) => {
     <Redirect to={"/profile"} />
   ) : (
     <section>
-      {" "}
-      <h1>Login</h1> <ReduxLoginForm onSubmit={onSubmit} />{" "}
+      <h1>Login</h1> <ReduxLoginForm onSubmit={onSubmit} />
     </section>
   );
 };
