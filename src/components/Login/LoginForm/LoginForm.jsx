@@ -3,7 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import { requiredField } from "../../../utils/validators";
 import { Input } from "../../common/FormControls/FormControls";
 
-const LoginForm = ({ handleSubmit, error } = {}) => {
+const LoginForm = ({ handleSubmit, error, captchaUrl } = {}) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -33,7 +33,21 @@ const LoginForm = ({ handleSubmit, error } = {}) => {
         />
         <label htmlFor="rememberMe">Remember me</label>
       </div>
+
       {error && <p>{error}</p>}
+
+      {captchaUrl && (
+        <div>
+          <img src={captchaUrl} alt="captcha" />
+          <Field
+            component={Input}
+            name="captcha"
+            type="text"
+            validate={[requiredField]}
+          />
+        </div>
+      )}
+
       <button>Sign in</button>
     </form>
   );
