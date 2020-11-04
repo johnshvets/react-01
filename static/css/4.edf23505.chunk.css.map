@@ -1,1 +1,0 @@
-{"version":3,"sources":["Paginator.module.css"],"names":[],"mappings":"AAAA,uBACE,oBAAqB,CACrB,WAAY,CACZ,cACF,CACA,+BACE,eAAgB,CAChB,oCACF","file":"4.edf23505.chunk.css","sourcesContent":[".page {\r\n  display: inline-block;\r\n  padding: 5px;\r\n  cursor: pointer;\r\n}\r\n.selectedPage {\r\n  font-weight: 700;\r\n  background-color: rgba(48, 190, 118, 0.2);\r\n}\r\n"]}
