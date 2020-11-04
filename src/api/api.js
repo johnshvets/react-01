@@ -40,6 +40,9 @@ export const profileAPI = {
       headers: { "Content-Type": "multipart/form-data" },
     });
   },
+  saveProfileData(profile) {
+    return axiosInstance.put("profile", profile);
+  },
 };
 
 export const authAPI = {
