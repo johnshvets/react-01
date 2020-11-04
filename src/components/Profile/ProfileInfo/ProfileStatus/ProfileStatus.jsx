@@ -15,8 +15,8 @@ const ProfileStatus = (props) => {
   const deActivateEditMode = () => {
     setEditMode(false);
     props.updateProfileStatus(status);
-  }; 
-  
+  };
+
   const onStatusChange = (e) => {
     setStatus(e.target.value);
   };
@@ -30,7 +30,9 @@ const ProfileStatus = (props) => {
   return (
     <div>
       {!editMode && (
-        <p onDoubleClick={activateEditMode}>{props.status || "------------"}</p>
+        <p onDoubleClick={activateEditMode}>
+          <b>Status:</b> {props.status || "------------"}
+        </p>
       )}
       {editMode && (
         <input
