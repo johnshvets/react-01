@@ -1,7 +1,6 @@
 .page {
   display: inline-block;
   padding: 5px;
-  cursor: pointer;
 }
 .selectedPage {
   font-weight: 700;
