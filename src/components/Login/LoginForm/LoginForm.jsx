@@ -27,13 +27,11 @@ const LoginForm = ({ handleSubmit, error } = {}) => {
       <div>
         <Field
           component={Input}
-          type={"checkbox"}
-          name={"rememberMe"}
-          id={"rememberMe"}
+          type="checkbox"
+          name="rememberMe"
+          id="rememberMe"
         />
-        <label class="checkbox-label" for="rememberMe">
-          Remember me
-        </label>
+        <label htmlFor="rememberMe">Remember me</label>
       </div>
       {error && <p>{error}</p>}
       <button>Sign in</button>
