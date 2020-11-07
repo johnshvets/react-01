@@ -1,7 +1,13 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import { HashRouter, Route, withRouter } from "react-router-dom";
+import {
+  HashRouter,
+  Redirect,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -34,22 +40,26 @@ class App extends React.Component {
     return (
       <div className="app-wrapper">
         <HeaderContainer />
-
-        <Navbar />
-
+        <Navbar />'
         <div className="app-wrapper-content">
-          <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
+          <Switch>
+            <Redirect exact from="/" to="/profile" />
+            <Route
+              path="/profile/:userId?"
+              render={() => <ProfileContainer />}
+            />
 
-          <Route path="/dialogs" render={withSuspense(DialogsContainer)} />
+            <Route path="/dialogs" render={withSuspense(DialogsContainer)} />
 
-          <Route path="/users" render={withSuspense(UsersContainer)} />
+            <Route path="/users" render={withSuspense(UsersContainer)} />
 
-          <Route path="/news" render={withSuspense(News)} />
+            <Route path="/news" render={withSuspense(News)} />
 
-          <Route path="/music" render={withSuspense(Music)} />
+            <Route path="/music" render={withSuspense(Music)} />
 
-          <Route path="/settings" render={withSuspense(Settings)} />
-          <Route path="/login" render={() => <Login />} />
+            <Route path="/settings" render={withSuspense(Settings)} />
+            <Route path="/login" render={() => <Login />} />
+          </Switch>
         </div>
       </div>
     );
