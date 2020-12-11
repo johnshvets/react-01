@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-const { default: Loader } = require("../components/common/loader");
+const { default: Loader } = require("../components/common/Loader");
 
 export const withSuspense = (Component) => {
   return (props) => {

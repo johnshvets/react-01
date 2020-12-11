@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "../../common/loader";
+import Loader from "../../common/Loader";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import userPic from "../../../images/user.svg";
 import ProfileData from "./ProfileData/ProfileData";

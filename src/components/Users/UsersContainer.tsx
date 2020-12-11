@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { follow, unfollow, getUsers } from "../../redux/users-reducer";
 import Users from "./Users";
-import Loader from "../common/loader";
+import Loader from "../common/Loader";
 import { compose } from "redux";
-import { withAuthRedirect } from "../../hoc/WithAuthRedirect";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import {
   getCurrentPage,
   getFollowingInProgress,
